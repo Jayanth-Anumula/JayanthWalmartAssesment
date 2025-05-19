@@ -12,6 +12,9 @@ This is an Android application built in Kotlin for displaying a list of countrie
   - Region
   - Capital
   - ISO Code
+- Shows a loading indicator while fetching data
+- Displays error messages if API fails or data is invalid
+- Displays a Snackbar alert when there's no internet connection
 
 ---
 ## Screenshots
