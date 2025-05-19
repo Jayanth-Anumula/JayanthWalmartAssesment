@@ -1,29 +1,24 @@
-# 🌍 Walmart Assessment Country App
+# Walmart Assessment Country App
 
-This is an Android application built in Kotlin for displaying a list of countries using a public JSON endpoint. It follows **Clean Code Architecture**, using **Retrofit**, **ViewModel**, **StateFlow**, and **RecyclerView** to load and display the country list in a user-friendly UI.
+This is an Android application built in Kotlin for displaying a list of countries using a endpoint. It follows **Clean Code Architecture**, using **Retrofit**, **ViewModel**, **StateFlow**, and **RecyclerView** to load and display the country list in a user-friendly UI.
 
 ---
 
-## 📱 Features
+## Features
 
-- Fetches country data from a remote API
+- Fetches country data from a remote [API](https://gist.githubusercontent.com/peymano-wmt/32dcb892b06648910ddd40406e37fdab/raw/db25946fd77c5873b0303b858e861ce724e0dcd0/countries.json)
 - Displays:
   - Country Name
   - Region
   - Capital
   - ISO Code
-- Uses sealed `ApiResponse` to handle loading, success, and error states
-- View updates based on reactive `StateFlow` from the ViewModel
-- Error handling and empty state support
-- Clean UI using Material Design
 
 ---
 ## Screenshots
 
-| Country List Screen |
-|---------------------|
-| ![screenshot](https://github.com/Jayanth-Anumula/JayanthWalmartAssesment/blob/main/output.png) |
-
+| Country List Screen | Video Demo |
+|---------------------|---------------------|
+|<img alt="screenshot" height="600" src="https://github.com/Jayanth-Anumula/JayanthWalmartAssesment/blob/main/output.png" width="280"/>|<video src="https://github.com/user-attachments/assets/18dfaa89-4a51-46c7-b26e-95caf6cb2c3c"/>|
 
 ---
 
@@ -88,16 +83,7 @@ com.jayanth.walmartassesment
 
 ---
 
-## Future Improvements
-
-- Add search functionality
-- Add country details screen
-- Use Paging3 for large datasets
-
----
-
 ## Author
 
 **Jayanth Anumula**
-This project is part of a Walmart Android Developer Assessment.
 ---
