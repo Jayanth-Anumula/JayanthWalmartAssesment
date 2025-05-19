@@ -4,18 +4,22 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jayanthwalmartassesment.databinding.ActivityMainBinding
 import com.jayanth.walmartassesment.commons.ApiResponse
 import com.jayanth.walmartassesment.data.remote.CountriesApiClient
 import com.jayanth.walmartassesment.data.remote.CountriesApiService
 import com.jayanth.walmartassesment.data.repositories.CountryRepositoryImpl
-
+import com.google.android.material.snackbar.Snackbar
 import com.jayanth.walmartassesment.domain.usecase.CountriesUseCase
 import com.jayanth.walmartassesment.presentation.viewModel.CountryViewModel
 import com.jayanth.walmartassesment.presentation.viewModel.CountryViewModelFactory
+import com.jayanth.walmartassesment.utils.NetworkUtils
+import kotlinx.coroutines.launch
 
 /**
  * [MainActivity] displays a list of countries using a RecyclerView.
@@ -42,22 +46,28 @@ class MainActivity : AppCompatActivity() {
 
         setupRecyclerView()
         setupViewModel()
-        setUpObservers()
+        if (NetworkUtils.isNetworkAvailable(this)) {
+            setUpObservers()
+        } else {
+            Snackbar.make(binding.root, "No internet connection. Please try again.", Snackbar.LENGTH_LONG).show()
+        }
     }
 
     /**
      * Observes the [countryState] from the ViewModel and updates the UI accordingly.
      */
     private fun setUpObservers() {
-        lifecycleScope.launchWhenStarted {
-            viewModel.countryState.collect { response ->
-                when (response) {
-                    is ApiResponse.Loading -> showLoading()
-                    is ApiResponse.Success -> {
-                        showContent()
-                        adapter.updateData(response.data)
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.countryState.collect { response ->
+                    when (response) {
+                        is ApiResponse.Loading -> showLoading()
+                        is ApiResponse.Success -> {
+                            showContent()
+                            adapter.updateData(response.data)
+                        }
+                        is ApiResponse.Error -> showError(response.message)
                     }
-                    is ApiResponse.Error -> showError(response.message)
                 }
             }
         }
