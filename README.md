@@ -17,8 +17,8 @@ This is an Android application built in Kotlin for displaying a list of countrie
 ## Screenshots
 
 | Country List Screen | Video Demo | Without Internet Demo |
-|---------------------|---------------------|---------------------|
-| <img alt="screenshot"  src="https://github.com/Jayanth-Anumula/JayanthWalmartAssesment/blob/main/output.png" width="250"/> | <video src="https://github.com/user-attachments/assets/18dfaa89-4a51-46c7-b26e-95caf6cb2c3c" width="250" controls/> | <video src="https://github.com/user-attachments/assets/e6969377-88a2-4ab1-9590-09fba6ac1f40" width="250" controls/> |
+|---------------------|------------|------------------------|
+| <div style="width:250px; display:inline-block;"><img alt="screenshot" src="https://github.com/Jayanth-Anumula/JayanthWalmartAssesment/blob/main/output.png" width="250"/></div> | <div style="width:250px; display:inline-block;"><video src="https://github.com/user-attachments/assets/18dfaa89-4a51-46c7-b26e-95caf6cb2c3c" width="250" controls></video></div> | <div style="width:250px; display:inline-block;"><video src="https://github.com/user-attachments/assets/e6969377-88a2-4ab1-9590-09fba6ac1f40" width="250" controls></video></div> |
 
 
 ---
