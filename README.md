@@ -59,8 +59,8 @@ com.jayanth.walmartassesment
 ## Tech Stack
 
 - **Language**: Kotlin
-- **UI**: ViewBinding, RecyclerView, Material Design
-- **Architecture**: MVVM, Clean Architecture
+- **UI**: ViewBinding, RecyclerView
+- **Architecture**: MVVM, Clean Code Architecture
 - **Networking**: Retrofit + Gson
 - **Asynchronous Handling**: Coroutines, ViewModelScope, StateFlow
 - **Testing**: MockK
@@ -75,15 +75,3 @@ com.jayanth.walmartassesment
 
 ---
 
-## Getting Started
-
-1. Clone the project
-2. Open in Android Studio
-3. Run the app on a real or virtual device with internet access
-
----
-
-## Author
-
-**Jayanth Anumula**
----
